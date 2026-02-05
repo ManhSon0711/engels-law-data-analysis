@@ -9,6 +9,8 @@ The workflow combines PostgreSQL-based data processing with Python regression an
 
 The project uses public-use microdata from the U.S. Consumer Expenditure Survey (CE), published by the U.S. Bureau of Labor Statistics (BLS).
 
+https://www.bls.gov/cex/pumd_data.htm
+
 Household income is obtained from the Family-Level Interview (FMLI) files.
 
 Food expenditure is constructed from the Monthly Interview (MTBI) files using UCC food categories.
@@ -72,3 +74,6 @@ python src/run_regression.py
 
 ## Note
 This project is intended for educational and research purposes and demonstrates a complete data analysis workflow, from raw survey processing to econometric estimation and interpretation.
+
+A detailed interpretation of regression results is provided in
+`results/results_interpretation.md`.
