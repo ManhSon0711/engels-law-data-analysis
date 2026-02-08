@@ -1,0 +1,5 @@
+## EVALUATION LINEAR MODEL: FOOD_SHARE ~ INCOME
+The estimated coefficient on quarterly income is −1.461 × 10⁻⁶, indicating a negative relationship whereby higher income is associated with a lower food expenditure share. The coefficient is precisely estimated, with a standard error of 6.15 × 10⁻⁸, resulting in a large t-statistic of −23.761 and a p-value of 0.000, which strongly rejects the null hypothesis of no relationship.
+
+## EVALUATION SEMI-LOG MODEL: FOOD_SHARE ~ LOG_INCOME
+The estimated coefficient on log quarterly income is −0.0324, indicating a negative relationship between income and food expenditure share, consistent with Engel’s Law. The coefficient is precisely estimated with a standard error of 0.001, yielding a large t-statistic of −24.565 and a p-value of 0.000, which strongly rejects the null hypothesis that income has no effect on food expenditure share.

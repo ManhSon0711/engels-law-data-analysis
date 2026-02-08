@@ -1,24 +1,24 @@
 ## Project Overview
 
-This project examines Engel’s Law, which states that as household income increases, the proportion of expenditure devoted to food declines.
-The analysis constructs a clean household-level dataset and estimates an Engel curve relating food expenditure share to income.
+This project explores Engel’s Law—the economic principle that households tend to spend a smaller share of their budget on food as their income increases.
 
-The workflow combines PostgreSQL-based data processing with Python regression analysis in a reproducible pipeline.
+The analysis builds a clean, household-level dataset and estimates the relationship between household income and the share of expenditure devoted to food using standard regression techniques.
+
+Data preparation is carried out in PostgreSQL, while the regression analysis is performed in Python. All steps are organized into a reproducible workflow so that the results can be easily replicated and extended.
 
 ## Data Source
 
-The project uses public-use microdata from the U.S. Consumer Expenditure Survey (CE), published by the U.S. Bureau of Labor Statistics (BLS).
+This project uses public-use microdata from the U.S. Consumer Expenditure Survey (CE) published by the U.S. Bureau of Labor Statistics (BLS).
 
-https://www.bls.gov/cex/pumd_data.htm
+Household income is taken from the Family-Level Interview (FMLI) files, while food expenditure is constructed from the Monthly Interview (MTBI) files using food-related UCC categories.
 
-Household income is obtained from the Family-Level Interview (FMLI) files.
+Raw survey data are processed locally using PostgreSQL and are not included in this repository due to data size and licensing restrictions. The final analytical dataset is available at: data/processed/engel_law.csv
 
-Food expenditure is constructed from the Monthly Interview (MTBI) files using UCC food categories.
+> **Note:**
+> Public-use CE Interview microdata (including 2024 releases) can be downloaded from:
+> https://www.bls.gov/cex/pumd_data.htm
 
-Raw survey data are processed locally using PostgreSQL and are not included in this repository due to data size and licensing considerations.
-The final analytical dataset is available at:
-
-data/processed/engel_law.csv
+This page provides access to both FMLI and MTBI files along with detailed documentation.
 
 ## Data Processing
 
@@ -35,7 +35,7 @@ The results show a negative relationship between income and food expenditure sha
 
 Key outputs:
 
-Regression summary: results/regression_result.txt
+Regression summary: results/regression_result.md
 
 Visualizations: figures/
 
@@ -54,15 +54,19 @@ engel-law/
     06_build_analytics_final_engel.sql
     07_quality_checks.sql
   src/
-    run_regression.py
+    engel_law.ipynb
   results/
-    regression_result.txt
+    results_interpretation.md
+    regression_food_share_income_results.txt
+    regression_food_share_log_income_result.txt
   figures/
-    Engel_Law_regline.png
-    Log_Quaterly_Income_and_Food_Share_Relationship.png
+    regline_income_food_share.png
+    regline_log_income_food_share.png
+    scatter_income_food_share.png
+    scatter_log_income_food_share.png
   docs/
     Entity Relationship Diagram.pdf
-    methodology.txt
+    methodology.md
   README.md
 
 
@@ -70,7 +74,7 @@ engel-law/
 
 After generating the processed dataset using the SQL pipeline, the analysis can be reproduced by running:
 
-python src/run_regression.py
+python src/engel_law.ipynb
 
 ## Note
 This project is intended for educational and research purposes and demonstrates a complete data analysis workflow, from raw survey processing to econometric estimation and interpretation.
